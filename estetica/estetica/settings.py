@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'citas.apps.CitasConfig',
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [
