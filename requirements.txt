@@ -1,0 +1,6 @@
+Django
+Markdown
+requests
+martor
+gunicorn
+django-widget-tweaks
