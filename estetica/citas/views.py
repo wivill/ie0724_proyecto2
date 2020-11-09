@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse, Http404
+# from django.http import HttpResponse, Http404
+from django.http import Http404
 from .models import usuario
 from .forms import userForm
 
@@ -36,7 +37,6 @@ def new(request):
                 'note': 'Hola!'
             }
         )
-
 
 
 def show(request, pk=None):
