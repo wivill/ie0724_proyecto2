@@ -4,7 +4,7 @@ from .models import usuario
 
 
 # Create your views here.
-def new(request):    
+def new(request):
     return HttpResponse('Showing \'new\' view page')
 
 
