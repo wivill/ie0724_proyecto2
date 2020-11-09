@@ -9,7 +9,7 @@ def new(request):
     new_form = userForm()
     if request.method == 'POST':
         filled_form = userForm(request.POST)
-        if filled_form.is_valid():Laica
+        if filled_form.is_valid():
             new_user = filled_form.save()
             note = (
                 'Usuario con identificador \'{}\' fue creado exitosamente.\n'
