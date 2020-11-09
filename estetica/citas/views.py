@@ -2,9 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from .models import usuario
 
+
 # Create your views here.
 def new(request):    
     return HttpResponse('Showing \'new\' view page')
+
 
 def show(request, pk=None):
     if pk is not None:
