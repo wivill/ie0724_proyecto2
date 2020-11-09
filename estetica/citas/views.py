@@ -3,13 +3,13 @@ from django.http import HttpResponse, Http404
 from .models import usuario
 from .forms import userForm
 
+
 # Create your views here.
 def new(request):
     new_form = userForm()
-
     if request.method == 'POST':
         filled_form = userForm(request.POST)
-        if filled_form.is_valid():
+        if filled_form.is_valid():Laica
             new_user = filled_form.save()
             note = (
                 'Usuario con identificador \'{}\' fue creado exitosamente.\n'
@@ -36,6 +36,8 @@ def new(request):
                 'note': 'Hola!'
             }
         )
+
+
 
 def show(request, pk=None):
     if pk is not None:

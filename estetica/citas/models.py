@@ -4,6 +4,8 @@ GENDERS = [
     ('F', 'Female'),
     ('O', 'Other')
 ]
+
+
 # Create your models here.
 class usuario(models.Model):
     name = models.CharField(max_length=60)
