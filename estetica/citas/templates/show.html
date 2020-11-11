@@ -1,5 +1,8 @@
 {% load widget_tweaks %}
+{% load static %}
 
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    
     <div class="container">
         <h1>Usuarios</h1>
         {% if object_pk and object_name %}
