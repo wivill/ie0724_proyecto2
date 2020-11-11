@@ -74,16 +74,17 @@ def show(request, pk=None):
             }
         )
 
+
 def home(request):
     return render(
         request, 'home.html'
     )
-        
-        
+
+
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
-        
+
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
@@ -93,7 +94,7 @@ def signup(request):
             return redirect('home')
     else:
         form = UserCreationForm()
-    
+
     return render(
         request, 
         'signup.html', 
