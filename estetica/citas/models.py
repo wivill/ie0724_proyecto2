@@ -41,10 +41,19 @@ class barber(models.Model):
     phone_number = models.CharField(max_length=9)
     age = models.PositiveIntegerField(blank=True)
 
+class NameUser(usuario):
+   class Meta:
+      proxy = True
+
+   def __str__(self):
+        return str(self.name)
+
+   def __unicode__(self):
+        return str(self.name)
 
 class appointment(models.Model):
     hour = models.TimeField()
     date = models.DateField()
     barber = models.ForeignKey(barber, on_delete=models.DO_NOTHING)
-    user = models.ForeignKey(usuario, blank=True, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(NameUser, blank=True, on_delete=models.DO_NOTHING)
 

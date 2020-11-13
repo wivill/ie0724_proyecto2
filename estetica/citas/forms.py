@@ -1,5 +1,5 @@
 from django import forms
-from .models import usuario #, appointment, barber
+from .models import usuario, appointment, barber
 
 class userForm(forms.ModelForm):
     class Meta:
@@ -21,7 +21,7 @@ class userForm(forms.ModelForm):
             'age': 'Edad',
             'allergies': 'Alergias',
         }
-"""
+
 class appointmentForm(forms.ModelForm):
     class Meta:
         model = appointment
@@ -56,4 +56,3 @@ class barberForm(forms.ModelForm):
             'phone_number': 'Número de teléfono',
             'age': 'Edad',
         }
-"""
