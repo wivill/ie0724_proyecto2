@@ -4,3 +4,4 @@ requests
 martor
 gunicorn
 django-widget-tweaks
+django-crispy-forms

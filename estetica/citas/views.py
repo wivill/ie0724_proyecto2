@@ -3,6 +3,11 @@ from django.shortcuts import render
 from django.http import Http404
 from .models import usuario
 from .forms import userForm
+# from .new_user_form import NewUserForm
+# from django.contrib.auth import login
+# from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+# from django.contrib import messages
+# from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.

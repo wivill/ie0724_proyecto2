@@ -1,4 +1,11 @@
+{% extends 'base.html' %}
 {% load widget_tweaks %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+{% block content %}      
+{% load crispy_forms_tags %}
 
     <div class="container">
         <h1>Usuarios</h1>
@@ -17,6 +24,6 @@
         {% endif %}
 
     </div>
-
+{% endblock %}
 
 
