@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'citas.apps.CitasConfig',
-    'widget_tweaks'
+    'widget_tweaks',
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,7 +60,7 @@ ROOT_URLCONF = 'estetica.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(BASE_DIR.joinpath('templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,6 +131,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 #     os.path.join(BASE_DIR, "static")
 # ]
 
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
+# LOGIN_URL = '/'
+# LOGOUT_URL = '/'
 LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'

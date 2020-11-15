@@ -3,8 +3,10 @@ from django.shortcuts import render, redirect
 from django.http import Http404
 from .models import usuario
 from .forms import userForm
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
+from .new_user_form import NewUserForm
+from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib import messages
 # from django.contrib.auth.decorators import login_required
 
 
@@ -75,28 +77,56 @@ def show(request, pk=None):
         )
 
 
-def home(request):
-    return render(
-        request, 'home.html'
-    )
+# def home(request):
+#     return render(
+#         request, 'home.html'
+#     )
 
 
-def signup(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+# def register_request(request):
+# 	if request.method == "POST":
+# 		form = NewUserForm(request.POST)
+# 		if form.is_valid():
+# 			user = form.save()
+# 			login(request, user)
+# 			messages.success(request, "Registro exitoso." )
+# 			return redirect("home.html")
+# 		messages.error(
+#             request,
+#             "Su registro ha fallado. Información inválida."
+#         )
+# 	form = NewUserForm
+# 	return render (
+#         request=request,
+#         template_name="signup.html",
+#         context={"register_form":form}
+#     )
+ 
+ 
+# def login_request(request):
+# 	if request.method == "POST":
+# 		form = AuthenticationForm(request, data=request.POST)
+# 		if form.is_valid():
+# 			username = form.cleaned_data.get('username')
+# 			password = form.cleaned_data.get('password')
+# 			user = authenticate(username=username, password=password)
+# 			if user is not None:
+# 				login(request, user)
+# 				messages.info(request, f"You are now logged in as {username}.")
+# 				return redirect("home.html")
+# 			else:
+# 				messages.error(request,"Invalid username or password.")
+# 		else:
+# 			messages.error(request,"Invalid username or password.")
+# 	form = AuthenticationForm()
+# 	return render(
+#         request=request,
+#         template_name="login.html",
+#         context={"login_form":form}
+#      )
 
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('home')
-    else:
-        form = UserCreationForm()
 
-    return render(
-        request,
-        'signup.html',
-        {'form': form}
-    )
+# def logout_request(request):
+# 	logout(request)
+# 	messages.info(request, "You have successfully logged out.") 
+# 	return redirect("home.html")

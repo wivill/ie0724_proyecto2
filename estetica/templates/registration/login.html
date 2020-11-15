@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}      
+
+  <h1>Inicio de sesión</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Log In</button>
+  </form>
+  <p class="text-center">¿Aún no posee una cuenta? <a href="/signup">Regístrese aquí</a>.</p>
+
+{% endblock %}
