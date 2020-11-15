@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'citas.apps.CitasConfig',
     'widget_tweaks',
     'crispy_forms',
+    'accounts',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

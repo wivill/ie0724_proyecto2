@@ -3,15 +3,18 @@
 {% load static %}
 
 
-{% block title %}Home{% endblock %}
+{% block title %}Barbería BMW{% endblock %}
 
 {% block content %}
+<h1>Barbería BMW</h1>
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
-  <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+  Hola {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Salir</a></p>
+  <p><a href="{% url 'password_reset' %}">Reiniciar contraseña</a></p>
 {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Log In</a>
+  <p>Bienvenido. Por favor inicie sesión.</p>
+  <a href="{% url 'login' %}">Iniciar sesión</a>
+  <p class="text-center">¿Aún no posee una cuenta? <a href="/accounts/signup">Regístrese aquí</a>.</p>
 {% endif %}
+  
 {% endblock %}
