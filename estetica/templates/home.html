@@ -6,8 +6,9 @@
 {% block title %}Barbería BMW{% endblock %}
 
 {% block content %}
-<h1>Barbería BMW</h1>
+<link rel="stylesheet" href="https://freewebsitetemplates.com/preview/hairrepairwebsitetemplate/css/style.css">
 {% if user.is_authenticated %}
+  
   Hola {{ user.username }}!
   <p><a href="{% url 'logout' %}">Salir</a></p>
   <p><a href="{% url 'password_reset' %}">Reiniciar contraseña</a></p>
