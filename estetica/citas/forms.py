@@ -1,6 +1,7 @@
 from django import forms
 from .models import usuario, appointment, barber
 
+
 class userForm(forms.ModelForm):
     class Meta:
         model = usuario

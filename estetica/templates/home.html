@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+
+
+{% block title %}Barbería BMW{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://freewebsitetemplates.com/preview/hairrepairwebsitetemplate/css/style.css">
+{% if user.is_authenticated %}
+  
+  Hola {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Salir</a></p>
+  {% comment %} <p><a href="{% url '/password_reset' %}">Reiniciar contraseña</a></p> {% endcomment %}
+{% else %}
+  <p>Bienvenido. Por favor inicie sesión.</p>
+  <a href="{% url 'login' %}">Iniciar sesión</a>
+  <p class="text-center">¿Aún no posee una cuenta? <a href="/signup">Regístrese aquí</a>.</p>
+{% endif %}
+  
+{% endblock %}

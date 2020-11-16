@@ -41,7 +41,6 @@ def new_user(request):
         )
 
 
-
 def show_user(request, pk=None):
     if pk is not None:
         try:

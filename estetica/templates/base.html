@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+{% load static %}
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Barbería BMW{% endblock %}</title>
+  {% comment %} <link rel="stylesheet" href="css/style.css" type="text/css"> {% endcomment %}
+  <link rel="stylesheet" href="https://freewebsitetemplates.com/preview/hairrepairwebsitetemplate/css/style.css">
+  
+</head>
+<body>
+  <main>
+
+    <div id="header">
+      <div>
+        <div id="logo">
+        </div>
+        <ul id="navigation">
+          <li class="selected">
+            <a href="">Inicio</a>
+          </li>
+          <li>
+            <a href="/login">Iniciar Sesión</a>
+          </li>
+          <li>
+            <a href="">Citas</a>
+          </li>
+          <li>
+            <a href="">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>
