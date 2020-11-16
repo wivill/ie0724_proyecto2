@@ -11,11 +11,11 @@
   
   Hola {{ user.username }}!
   <p><a href="{% url 'logout' %}">Salir</a></p>
-  <p><a href="{% url 'password_reset' %}">Reiniciar contraseña</a></p>
+  {% comment %} <p><a href="{% url '/password_reset' %}">Reiniciar contraseña</a></p> {% endcomment %}
 {% else %}
   <p>Bienvenido. Por favor inicie sesión.</p>
   <a href="{% url 'login' %}">Iniciar sesión</a>
-  <p class="text-center">¿Aún no posee una cuenta? <a href="/accounts/signup">Regístrese aquí</a>.</p>
+  <p class="text-center">¿Aún no posee una cuenta? <a href="/signup">Regístrese aquí</a>.</p>
 {% endif %}
   
 {% endblock %}
