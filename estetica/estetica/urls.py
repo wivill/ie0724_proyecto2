@@ -19,7 +19,15 @@ from citas import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('new/', views.new, name="new"),
-    path('show/', views.show, name="show"),
-    path('show/<int:pk>', views.show, name="show"),
+    path('new_user/', views.new_user, name="new_user"),
+    path('show_user/', views.show_user, name="show_user"),
+    path('show_user/<int:pk>', views.show_user, name="show_user"),
+    path('new_appointment/', views.new_appointment, name="new_appointment"),
+    path('new_appointment/<str:name>', views.new_appointment, name="new_appointment"),
+    path('show_appointments/', views.show_appointments, name="show_appointments"),
+    path('show_appointments/<str:name>', views.show_appointments, name="show_appointments"),
+    path('new_stylist/', views.new_stylist, name="new_stylist"),
+    path('show_stylist/', views.show_stylist, name="show_stylist"),
+    path('show_stylist/<str:name>', views.show_stylist, name="show_stylist"),
+    
 ]

@@ -1,0 +1,23 @@
+{% load widget_tweaks %}
+
+    <div class="container">
+
+      <h1>Creando un nuevo usuario</h1>
+
+      <h2>{{ note }}</h2>
+
+      <form action="{% url 'new_user' %}" method="post">
+          {% csrf_token %}
+          {% for field in personform %}
+          <div class="form-group">
+
+            {{ field.label_tag }}
+            {% render_field field class="form-control" %}
+
+          </div>
+          {% endfor %}
+
+          <input type="submit" value="Nuevo usuario">
+      </form>
+
+    </div>
