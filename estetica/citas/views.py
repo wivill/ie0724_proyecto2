@@ -82,7 +82,7 @@ def show_user(request, pk=None):
 def new_stylist(request):
     new_form = barberForm()
     if request.method == 'POST':
-        filled_form = userForm(request.POST)
+        filled_form = barberForm(request.POST)
         if filled_form.is_valid():
             new_user = filled_form.save()
             note = (
@@ -191,7 +191,7 @@ def show_appointments(request, name=None):
         )
 
 def new_appointment(request):
-    new_form = userForm()
+    new_form = appointmentForm()
     if request.method == 'POST':
         filled_form = appointmentForm(request.POST)
         if filled_form.is_valid():
