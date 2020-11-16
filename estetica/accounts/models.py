@@ -24,7 +24,7 @@ class UserCreateForm(UserCreationForm):
             'place',
             'phone_number',
             'age',
-            'allergies'
+            'allergies',
         )
 
     def save(self, commit=True):
@@ -38,7 +38,7 @@ class UserCreateForm(UserCreationForm):
                                    age=self.cleaned_data['age'],
                                    place=self.cleaned_data['place'],
                                    phone_number=self.cleaned_data['phone_number'],
-                                   allergies=self.cleaned_data['allergies']
+                                   allergies=self.cleaned_data['allergies'],
                                    )
         user_profile.save()
         return user, user_profile

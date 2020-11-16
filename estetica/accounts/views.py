@@ -7,10 +7,10 @@ from .models import UserCreateForm
 
 
 def welcome(request):
-    # Si estamos identificados devolvemos la portada
+    # Si estamos identificados devolvemos el home
     if request.user.is_authenticated:
         return render(request, "home.html")
-    # En otro caso redireccionamos al login
+    
     return redirect('/login')
 
 
@@ -49,7 +49,7 @@ def login(request):
                 do_login(request, user)
                 return redirect('/')
 
-    return render(request, "registration/login.html", {'form': form})
+    return render(request, "registration/home.html", {'form': form})
 
 
 def logout(request):
