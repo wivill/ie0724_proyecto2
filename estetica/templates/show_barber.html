@@ -1,0 +1,19 @@
+{% load widget_tweaks %}
+
+    <div class="container">
+        <h1>Estilistas</h1>
+        {% if object_pk and object_name %}
+        <h2>Esta es la página del (la) estilista {{object_name}} con pk: {{object_pk}}, edad: {{object_age}}, teléfono: {{phone_number}}, género: {{'gender'}} </h2>
+        {% else %}
+        <h2>Lista de estilistas:</h2>
+        {% for name, values in users_dict.items %}
+        <a href="{% url 'show_stylist' values.pk%}">
+            <h3>
+                {{name}} con pk: {{values.pk}}, edad: {{values.age}}
+            </h3>
+        </a>
+
+        {% endfor %}
+        {% endif %}
+
+    </div>
