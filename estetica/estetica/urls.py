@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 # from django.contrib.auth import views as auth_views
-from django.urls import path, include
+from django.urls import path
 from citas import views as base_views
 from accounts import views as auth_views
 # from django.conf.urls import url
