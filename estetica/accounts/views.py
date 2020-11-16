@@ -10,7 +10,7 @@ def welcome(request):
     # Si estamos identificados devolvemos el home
     if request.user.is_authenticated:
         return render(request, "home.html")
-    
+
     return redirect('/login')
 
 
