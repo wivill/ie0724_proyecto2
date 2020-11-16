@@ -49,7 +49,7 @@ def login(request):
                 do_login(request, user)
                 return redirect('/')
 
-    return render(request, "registration/home.html", {'form': form})
+    return render(request, "registration/login.html", {'form': form})
 
 
 def logout(request):
