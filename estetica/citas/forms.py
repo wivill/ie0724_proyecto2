@@ -23,6 +23,7 @@ class userForm(forms.ModelForm):
             'allergies': 'Alergias',
         }
 
+
 class appointmentForm(forms.ModelForm):
     class Meta:
         model = appointment
@@ -40,6 +41,7 @@ class appointmentForm(forms.ModelForm):
             'user': 'Usuario',
 
         }
+
 
 class barberForm(forms.ModelForm):
     class Meta:
