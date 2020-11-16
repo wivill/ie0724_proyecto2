@@ -19,7 +19,7 @@ def signup(request):
     form = UserCreateForm()
     if request.method == "POST":
         form = UserCreateForm(data=request.POST)
-        
+
         if form.is_valid():
             user = form.save()
 
@@ -34,10 +34,10 @@ def signup(request):
 def login(request):
     # Creamos el formulario de autenticación vacío
     form = AuthenticationForm()
-    
+
     if request.method == "POST":
         form = AuthenticationForm(data=request.POST)
-    
+
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
