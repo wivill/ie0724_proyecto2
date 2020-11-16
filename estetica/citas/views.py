@@ -202,7 +202,10 @@ def new_appointment(request):
                 'Fecha: {}\n'
                 'Hora: {}\n'
                 'Barbero: {}'.format(
-                    new_user.pk, filled_form.cleaned_data['date'], filled_form.cleaned_data['hour'], filled_form.cleaned_data['barber'],
+                    new_user.pk,
+                    filled_form.cleaned_data['date'],
+                    filled_form.cleaned_data['hour'],
+                    filled_form.cleaned_data['barber'],
                 )
             )
         else:
@@ -224,15 +227,3 @@ def new_appointment(request):
                 'note': 'Creación de nueva cita'
             }
         )
-
-
-
-
-
-    """
-    path('show_stylist/', views.show_stylist, name="show_stylist"),
-    path('new_appointment/', views.new_appointment, name="new_appointment"),
-    path('show_appointments/', views.show_appointments, name="show_appointments"),
-    path('new_stylist/', views.new_stylist, name="new_stylist"),
-    """
-

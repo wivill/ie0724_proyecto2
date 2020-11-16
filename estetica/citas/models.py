@@ -52,13 +52,13 @@ class appointment(models.Model):
 class AppointmentsData(appointment):
     class Meta:
         proxy = True
-    
+
     def __str__(self):
         data = "Fecha: " + str(self.date)
         data += " Hora: " + str(self.hour)
         data += " Estilista: " + str(self.barber)
         return str(data)
-    
+
     def __unicode__(self):
         data = "Fecha: " + str(self.date)
         data += " Hora: " + str(self.hour)
