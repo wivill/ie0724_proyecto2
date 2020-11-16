@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 # from django.contrib.auth import views as auth_views
-from django.urls import path, include
+from django.urls import path
 from citas import views as base_views
+from accounts import views as auth_views
 # from django.conf.urls import url
 from django.views.generic.base import TemplateView
 
@@ -27,9 +28,9 @@ urlpatterns = [
     path('show/', base_views.show, name="show"),
     path('show/<int:pk>', base_views.show, name="show"),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('accounts/', include('accounts.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    # url('login', base_views.login_request, name='login'),
-    # url('logout', base_views.logout_request, name='logout'),
-    # url('signup', base_views.register_request, name='signup'),
+    # path('accounts/', include('accounts.urls')),
+    # path('accounts/', include('django.contrib.auth.urls')),
+    path('login/', auth_views.login, name='login'),
+    path('logout/', auth_views.logout, name='logout'),
+    path('signup/', auth_views.signup, name='signup'),
 ]
